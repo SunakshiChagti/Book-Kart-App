@@ -1,48 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="bookKartApp">
 
 <head>
     <meta charset="utf-8">
     <title>My Book Kart App</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="scripts/bootstrap.css"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="scripts/bootstrap.css" crossorigin="anonymous">
     <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
     <script src="app.js"></script>
-
+    <script src="factory.js"></script>
+    <script src="components/bookListController.js"></script>
+    <script src="components/headerController.js"></script>
+    <script src="components/kartListController.js"></script>
 </head>
 
 <body>
-        <div id="headerWrapper" ng-controller="HeaderController">
-                <span class="logo pull-left">{{headerDetails.title}}</span><br/>
-                <span class="tagline pull-left">{{headerDetails.tagline}}</span>
-                <div class="nav-wrapper pull-left">
-                    <ul class="nav nav-pills">
-                        <li class="active"><a href="#">Books</a></li>
-                        <li><a href="#">Kart</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="bookListWrapper" ng-controller="BookListController">
-                    <ul class="list-unstyled">
-                        <li class="book" 
-                            style="background: white url(imgs/{{book.imgUrl}}) no-repeat"
-                            ng-repeat="book in bookList">
-                            <div class="book-details clearfix">
-                                <h3>{{book.name}}</h3>
-                                <p>{{book.price}}</p>
-                                <ul class="list-unstyled list-inline">
-                                    <li>Rating: {{book.rating}}</li>
-                                    <li>Binding: {{book.binding}}</li>
-                                    <li>Publisher: {{book.publisher}}</li>
-                                    <li>Released: {{book.releaseDate}}</li>
-                                </ul>
-                                <p>{{book.details}}</p>
-                                <button class="btn btn-info pull-right" ng-click="addToKart(book)">Add to Kart</button>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+    <div id="headerId" ng-controller="HeaderController">
+        <span id="logo">{{headerList.title}}</span>
+        <span id="tagline">{{headerList.tagline}}</span>
+        <div>
+            <a href="#/books">Books</a>
+            <a href="#/kart">Kart</a>
+        </div>
+    </div>
+    <div ng-view></div>
+
 </body>
 
 </html>
