@@ -1,8 +1,8 @@
 <p>Please select buy button to buy a book.</p>
 <div id="bookLists">
     <ul ng-repeat="books in kart">
-        <li>{{books.bookName}}</li>
-        <li>{{books.bookprice}}</li>
+        <li>{{books.bookName | uppercase}}</li>
+        <li>{{books.bookprice | currency:'Rs.'}}</li>
         <li style=" background:white url(imgs/{{books.bookImage}}); height:50px;"></li>
         <li>{{books.bookDescription}}</li>
         <li>{{books.bookRating}}</li>

@@ -1,8 +1,8 @@
-<input type="text" placeholder="Search" />
+<input type="text" placeholder="Search" ng-model="SearchString"/>
 <div id="bookLists">
-    <ul ng-repeat="books in bookList">
-        <li>{{books.bookName}}</li>
-        <li>{{books.bookprice}}</li>
+    <ul ng-repeat="books in bookList | filter : SearchString">
+        <li>{{books.bookName | uppercase}}</li>
+        <li>{{books.bookprice | currency:'Rs.'}}</li>
         <li style=" background:white url(imgs/{{books.bookImage}}); height:50px;"></li>
         <li>{{books.bookDescription}}</li>
         <li>{{books.bookRating}}</li>

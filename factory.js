@@ -9,10 +9,10 @@ bookKartApp.factory("bookService", function () {
 			bookRating: 4
 		},
 		{
-			bookName: "Data Structure",
+			bookName: "OOPS",
 			bookprice: 200,
 			bookImage: "ds.jpg",
-			bookDescription: "Data Structure book for B.tech holders",
+			bookDescription: "Object Oriented Programming",
 			bookRating: 4
 		}
 
